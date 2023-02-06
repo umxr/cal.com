@@ -496,15 +496,15 @@ export default function Success(props: SuccessProps) {
                     {locationToDisplay && (
                       <>
                         <div className="mt-3 font-medium">{t("where")}</div>
-                        <div className="col-span-2 mt-3">
-                          {locationToDisplay.startsWith("http") ? (
-                            <a title="Meeting Link" href={locationToDisplay}>
+                        {locationToDisplay.startsWith("http") ? (
+                          <div className="col-span-2 mt-3 truncate">
+                            <a title={locationToDisplay} href={locationToDisplay}>
                               {locationToDisplay}
                             </a>
-                          ) : (
-                            locationToDisplay
-                          )}
-                        </div>
+                          </div>
+                        ) : (
+                          <div className="col-span-2 mt-3">locationToDisplay</div>
+                        )}
                       </>
                     )}
                     {bookingInfo?.description && (
