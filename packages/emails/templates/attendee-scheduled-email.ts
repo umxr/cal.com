@@ -50,7 +50,11 @@ export default class AttendeeScheduledEmail extends BaseEmail {
       attendees: this.calEvent.attendees.map((attendee: Person) => ({
         name: attendee.name,
         email: attendee.email,
+        partstat: "NEEDS-ACTION",
+        role: "REQ-PARTICIPANT",
+        rsvp: true,
       })),
+      method: "REQUEST",
       ...{ recurrenceRule },
       status: "CONFIRMED",
     });
@@ -65,6 +69,7 @@ export default class AttendeeScheduledEmail extends BaseEmail {
       icalEvent: {
         filename: "event.ics",
         content: this.getiCalEventAsString(),
+        method: "REQUEST",
       },
       to: `${this.attendee.name} <${this.attendee.email}>`,
       from: `${this.calEvent.organizer.name} <${this.getMailerOptions().from}>`,
