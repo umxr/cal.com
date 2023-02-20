@@ -197,7 +197,7 @@ function EventTypeSingleLayout({
       heading={eventType.title}
       CTA={
         <div className="flex items-center justify-end">
-          <div className="hidden items-center rounded-md px-2 sm:flex sm:hover:bg-gray-100">
+          <div className="hidden items-center rounded-md px-2 lg:flex lg:hover:bg-gray-100">
             <Skeleton
               as={Label}
               htmlFor="hiddenSwitch"
@@ -293,12 +293,12 @@ function EventTypeSingleLayout({
                   {t("delete")}
                 </DropdownItem>
               </DropdownMenuItem>
-              <DropdownMenuSeparator className="block sm:hidden" />
-              <div className="flex items-center rounded-md py-1.5 px-4 sm:hidden sm:hover:bg-gray-100">
+              <DropdownMenuSeparator className="block" />
+              <div className="flex items-center rounded-md py-1.5 px-4 sm:hover:bg-gray-100">
                 <Skeleton
                   as={Label}
                   htmlFor="hiddenSwitch"
-                  className="mt-2 inline cursor-pointer self-center pr-2 sm:hidden">
+                  className="mt-2 inline cursor-pointer self-center pr-2">
                   {t("hide_from_profile")}
                 </Skeleton>
                 <Switch
